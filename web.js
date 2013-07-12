@@ -1,4 +1,3 @@
-var express = require('express');
 
 var app = express.createServer(express.logger());
 
@@ -6,12 +5,7 @@ var fs = require('fs');
 
 app.get('/', function(request, response) {
     var fileName = fs.readFileSync("index.html");
-    var buff = new Buffer(fileName);
-    for var i = 0; i < fileName.length; i++){
-    buff[i] = strcharCodeA(i);
-}
-
-response.send(buff);
+    response.send(fileName.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
