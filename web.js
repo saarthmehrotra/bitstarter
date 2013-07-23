@@ -4,7 +4,7 @@ var app = express.createServer(express.logger());
 
 var fs = require('fs');
 
-var htmlfile = "index.html";
+var htmlfile = "saarth.html";
 
 app.get('/', function(request, response) {
     var html = fs.readFileSync(htmlfile).toString();
